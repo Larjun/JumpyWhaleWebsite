@@ -17,6 +17,7 @@ function App() {
         order={1}
         ta="center"
         fz={{ base: "3.5rem", sm: "5rem" }}
+        ff="'Tele Marines', system-ui, sans-serif"
         c="teal"
         fs="italic"
         mb="md"

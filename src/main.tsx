@@ -24,7 +24,7 @@ const theme = createTheme({
   primaryColor: "teal",
   colors: { teal: TEAL_RAMP },
   fontFamily: "'Roboto', sans-serif",
-  headings: { fontFamily: "'Tele Marines', system-ui, sans-serif" },
+  headings: { fontFamily: "'Roboto', sans-serif" },
   components: {
     Card: {
       styles: {
