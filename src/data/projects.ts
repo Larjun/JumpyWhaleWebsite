@@ -55,7 +55,7 @@ export const PROJECTS: ProjectClassDef[] = [
     name: "Soar-N Racing Team",
     role: "Creative Design Officer",
     description:
-      "Soar-N Racing Team is my home. I been with this team since I got back into simracing at the start of 2021. We had so many adventures in Assetto Corsa Competizione, iRacing and Le Mans Ultimate. While I intially started designing liveries for our virtual endurace races, I now look after the teams visual identity. I manage the livery design team among other branding and creative tasks. I ensure that we look the best whether we win races or finish at the back",
+      "Soar-N Racing Team is my home. I been with this team since I got back into sim racing at the start of 2021. We had so many adventures in Assetto Corsa Competizione, iRacing and Le Mans Ultimate. While I intially started designing liveries for our virtual endurace races, I now look after the teams visual identity. I manage the livery design team among other branding and creative tasks. I ensure that we look the best whether we win races or finish at the back",
     link: "https://soarn.co",
     year: "2021 — present",
     status: "Current",
@@ -75,7 +75,7 @@ export const PROJECTS: ProjectClassDef[] = [
     name: "Jumpy Whale Design",
     role: "Freelance Livery Creator",
     description:
-      "My livery design studio, and the reason for most of my late nights. I have been making simracing liveries for drivers, teams and leagues for since 2021. I designed and shipped over 60 liveries since 2024 and many more over the years. I pride myself in creating the best looking liveries for my clients and seeing my work on track",
+      "My livery design studio, and the reason for most of my late nights. I have been making sim racing liveries for drivers, teams and leagues for since 2021. I designed and shipped over 60 liveries since 2024 and many more over the years. I pride myself in creating the best looking liveries for my clients and seeing my work on track",
     link: "https://design.jumpywhale.com",
     logoImg: jwd,
     fit: "contain",
@@ -93,7 +93,7 @@ export const PROJECTS: ProjectClassDef[] = [
     ...logoCardImg("sraLogo.png"),
   },
   {
-    name: "Simracing Enduro Planner",
+    name: "Sim Racing Enduro Planner",
     role: "Creator",
     description:
       "Fuel, stints, driver swaps and pit windows for long races, worked out properly. I built it for our own team after I decided that there is only so much a spreadsheet can do. Feel free to try it out for your own team. Its free!",
@@ -125,7 +125,7 @@ export const PROJECTS: ProjectClassDef[] = [
     name: "Content Creation",
     role: "Creator",
     description:
-      "I have a YouTube channel where I post my simracing shenanigans. I been slowly pivoting to more real life content. I been also making content for Soar-N Racing Team",
+      "I have a YouTube channel where I post my sim racing shenanigans. I been slowly pivoting to more real life content. I been also making content for Soar-N Racing Team",
     link: "https://www.youtube.com/@jumpywhale45",
     year: "present",
     status: "Current",
