@@ -51,10 +51,10 @@ export const HOME_BANNERS: BannerDef[] = [
   {
     id: "hero",
     index: "00",
-    headline: "I love simracing",
+    headline: "I love sim racing",
     accentWord: "and motorsports",
     body: [
-      "Hi, I'm Arjun. I do a lot of cool stuff in simracing, I make liveries and do stuff for leagues and teams.",
+      "Hi, I'm Arjun. I do a lot of cool stuff in sim racing, I make liveries and do stuff for leagues and teams.",
     ],
     media: liveryMedia(
       "jwd_genesis_3",
@@ -80,7 +80,7 @@ export const HOME_BANNERS: BannerDef[] = [
     headline: "I make cars",
     accentWord: "look cooler",
     body: [
-      "I make simracing liveries, I'd say sixty liveries have been made but its more than that and I lost count.",
+      "I make sim racing liveries, I'd say sixty liveries have been made but its more than that and I lost count.",
       "I love seeing my work of art on track, every livery is made by my passion to make stuff look cool and something you can't tell if is real or on a sim. I worked with multiple drivers, teams and leagues to create liveries for multiple sims over the past 5 years",
     ],
     media: liveryMedia(
@@ -105,7 +105,7 @@ export const HOME_BANNERS: BannerDef[] = [
     headline: "Racing at the",
     accentWord: "sharp end",
     body: [
-      "I help run racing teams and esports communities. I have creative roles in esports teams while dealing with the community and events in simracing leagues and collegiate esports. I can broadcast and commentate races, run events and deal with community and brands.",
+      "I help run racing teams and esports communities. I have creative roles in esports teams while dealing with the community and events in sim racing leagues and collegiate esports. I can broadcast and commentate races, run events and deal with community and brands.",
     ],
     media: liveryMedia(
       "dts_aston_v8_1",
@@ -124,7 +124,7 @@ export const HOME_BANNERS: BannerDef[] = [
     accentWord: "write the code",
     body: [
       "I'm a software developer by out of the sim, I have a degree in computer science and I worked in Big Tech",
-      "My passion is still simracing and motorsport. I like to build and maintain cool software like my Simracing Enduro Planner, and the Sim Racing Alliance website.",
+      "My passion is still sim racing and motorsport. I like to build and maintain cool software like my Sim Racing Enduro Planner, and the Sim Racing Alliance website.",
     ],
     media: liveryMedia(
       "mhr_acc_550Fezza",
