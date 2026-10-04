@@ -142,3 +142,405 @@
 body {
   margin: 0;
 }
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   Jumpy Whale — motorsport design language
+   Accent #00FFA1 · headings Michroma · body Blinker · logo Tele Marines
+   ══════════════════════════════════════════════════════════════════════════════ */
+
+:root {
+  --jw-accent: #00ffa1;
+  --jw-nav-h: 64px;
+  --jw-slash: 15deg;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--jw-nav-h);
+}
+
+/* Headings — Michroma is wide and single-weight, so it runs upright at 400
+   with slightly negative tracking and a taller line box. */
+.jw-display {
+  font-family: "Michroma", system-ui, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: -0.015em;
+  line-height: 1.18;
+}
+
+/* Tele Marines is now reserved for the logo alone. */
+.jw-logo {
+  font-family: "Tele Marines", system-ui, sans-serif;
+  font-style: italic;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+/* ─── Sticky nav ─────────────────────────────────────────────────────────────── */
+
+.jw-nav {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  height: var(--jw-nav-h);
+  background: color-mix(in srgb, var(--mantine-color-body) 82%, transparent);
+  backdrop-filter: blur(12px) saturate(140%);
+  -webkit-backdrop-filter: blur(12px) saturate(140%);
+  border-bottom: 1px solid transparent;
+  transition:
+    border-color 0.25s ease,
+    background 0.25s ease;
+}
+
+.jw-nav[data-scrolled="true"] {
+  border-bottom-color: color-mix(in srgb, var(--jw-accent) 45%, transparent);
+  background: color-mix(in srgb, var(--mantine-color-body) 94%, transparent);
+}
+
+.jw-navlink {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  height: var(--jw-nav-h);
+  padding: 0 2px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--mantine-color-text);
+  text-decoration: none;
+  opacity: 0.68;
+  transition:
+    opacity 0.2s ease,
+    color 0.2s ease;
+}
+
+.jw-navlink:hover {
+  opacity: 1;
+  color: var(--jw-accent);
+}
+
+/* The sliding timing-screen underline */
+.jw-navlink::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 14px;
+  height: 2px;
+  background: var(--jw-accent);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.jw-navlink.is-active {
+  opacity: 1;
+  color: var(--jw-accent);
+}
+
+.jw-navlink.is-active::after,
+.jw-navlink:hover::after {
+  transform: scaleX(1);
+}
+
+/* Drawer variant — same link, stacked and larger */
+.jw-navlink-mobile {
+  height: auto;
+  font-size: 1.5rem;
+  padding: 14px 0;
+}
+
+.jw-navlink-mobile::after {
+  bottom: 6px;
+}
+
+/* ─── Banner divider ─────────────────────────────────────────────────────────── */
+
+.jw-divider {
+  position: relative;
+  z-index: 3;
+  height: 1px;
+  width: 100%;
+  background: color-mix(in srgb, var(--jw-accent) 40%, transparent);
+  box-shadow:
+    0 0 10px color-mix(in srgb, var(--jw-accent) 28%, transparent),
+    0 -10px 20px -12px rgba(0, 0, 0, 0.75),
+    0 10px 20px -12px rgba(0, 0, 0, 0.75);
+}
+
+/* ─── Banners ────────────────────────────────────────────────────────────────── */
+
+.jw-banner {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* The 15° speed slash drawn on a banner edge */
+.jw-slash {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.jw-slash::before {
+  content: "";
+  position: absolute;
+  top: -20%;
+  bottom: -20%;
+  left: -8%;
+  width: 3px;
+  background: var(--jw-accent);
+  transform: rotate(var(--jw-slash));
+  opacity: 0.55;
+}
+
+.jw-slash::after {
+  content: "";
+  position: absolute;
+  top: -20%;
+  bottom: -20%;
+  left: -4%;
+  width: 90px;
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--jw-accent) 16%, transparent),
+    transparent
+  );
+  transform: rotate(var(--jw-slash));
+}
+
+/* Dark scrim so banner copy stays legible over any livery photo */
+.jw-banner-media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.jw-banner-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* Flat wash over a banner photo — no gradient, just an even darkening. */
+.jw-banner-dim {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+/* Asphalt-ish grid texture for photo-less banners */
+.jw-grid-texture {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image:
+    linear-gradient(
+      to right,
+      color-mix(in srgb, var(--mantine-color-text) 7%, transparent) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to bottom,
+      color-mix(in srgb, var(--mantine-color-text) 7%, transparent) 1px,
+      transparent 1px
+    );
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse at 30% 40%, black, transparent 78%);
+  -webkit-mask-image: radial-gradient(
+    ellipse at 30% 40%,
+    black,
+    transparent 78%
+  );
+}
+
+/* Clearly-marked placeholder where a real image is still missing */
+.jw-placeholder {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    repeating-linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--jw-accent) 9%, transparent) 0 14px,
+      transparent 14px 28px
+    ),
+    linear-gradient(135deg, #101b17, #0a0a0a 60%, #13231d);
+}
+
+/* ─── Section label: "01 / LIVERIES" ────────────────────────────────────────── */
+
+.jw-sectionlabel {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: "Michroma", system-ui, sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--jw-accent);
+}
+
+.jw-sectionlabel::after {
+  content: "";
+  flex: 1;
+  max-width: 120px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    var(--jw-accent),
+    color-mix(in srgb, var(--jw-accent) 0%, transparent)
+  );
+}
+
+/* Right-aligned banners read inward, so the rule leads instead of trails. */
+.jw-sectionlabel--right {
+  flex-direction: row-reverse;
+}
+
+.jw-sectionlabel--right::after {
+  background: linear-gradient(
+    270deg,
+    var(--jw-accent),
+    color-mix(in srgb, var(--jw-accent) 0%, transparent)
+  );
+}
+
+/* ─── Scroll reveal ─────────────────────────────────────────────────────────── */
+
+.jw-reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.jw-reveal[data-visible="true"] {
+  opacity: 1;
+  transform: none;
+}
+
+/* ─── Cards & CTAs ──────────────────────────────────────────────────────────── */
+
+.jw-card {
+  transition:
+    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.jw-card:hover {
+  transform: translateY(-6px);
+  border-color: color-mix(in srgb, var(--jw-accent) 55%, transparent);
+  box-shadow: 0 18px 40px -18px
+    color-mix(in srgb, var(--jw-accent) 45%, transparent);
+}
+
+.jw-card-media {
+  height: 190px;
+  overflow: hidden;
+  position: relative;
+}
+
+.jw-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* Logo cards: the team marks are transparent PNGs — some of them white — so
+   they sit on a dark plate with breathing room instead of edge-to-edge. */
+.jw-card-media--logo {
+  background:
+    radial-gradient(
+      ellipse at 50% 40%,
+      rgba(255, 255, 255, 0.09),
+      transparent 70%
+    ),
+    linear-gradient(160deg, #161616, #0b0b0b);
+  padding: 26px;
+  border-bottom: 1px solid var(--card-border);
+}
+
+.jw-card-media--logo img {
+  object-fit: contain;
+}
+
+/* Vector marks sit centred on the plate, drawn in the accent colour. */
+.jw-card-media--icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--jw-accent);
+}
+
+.jw-card-media--icon svg {
+  width: min(42%, 130px);
+  height: auto;
+  display: block;
+  filter: drop-shadow(
+    0 6px 18px color-mix(in srgb, var(--jw-accent) 35%, transparent)
+  );
+}
+
+/* Dark team marks need the opposite treatment. */
+.jw-card-media--logo-light {
+  background:
+    radial-gradient(
+      ellipse at 50% 40%,
+      rgba(255, 255, 255, 0.5),
+      transparent 70%
+    ),
+    linear-gradient(160deg, #c4c4c4, #a9a9a9);
+}
+
+/* Portrait frame */
+.jw-portrait {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  background: var(--card-bg);
+}
+
+.jw-portrait img {
+  width: 100%;
+  display: block;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+/* ─── Reduced motion ───────────────────────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .jw-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .jw-card,
+  .jw-navlink,
+  .jw-navlink::after {
+    transition: none;
+  }
+
+  .jw-card:hover {
+    transform: none;
+  }
+}

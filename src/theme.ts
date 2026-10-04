@@ -33,3 +33,14 @@ export const TEAL_RAMP: [
   "#006640",
   "#003320",
 ];
+
+// ─── Accent shorthand (same value as TEAL_RAMP[5]) ────────────────────────────
+export const ACCENT = "#00FFA1";
+
+// ─── Banner / panel surfaces ──────────────────────────────────────────────────
+export const PANEL_BG_LIGHT = "#f4f4f4";
+export const PANEL_BG_DARK = "#141414";
+
+// ─── Muted text ───────────────────────────────────────────────────────────────
+export const MUTED_LIGHT = "#5a5a5a";
+export const MUTED_DARK = "#9a9a9a";

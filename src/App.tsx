@@ -1,74 +1,20 @@
-import {
-  Anchor,
-  Box,
-  Card,
-  Container,
-  Image,
-  SimpleGrid,
-  Text,
-  Title,
-} from "@mantine/core";
-import { PROJECTS } from "./projects";
-import "./App.css";
+import { Navigate, Route, Routes } from "react-router-dom";
+import SiteLayout from "./layout/SiteLayout";
+import About from "./pages/About";
+import Home from "./pages/Home";
+import Projects from "./pages/Projects";
 
 function App() {
   return (
-    <Box
-      style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}
-    >
-      <Container size="md" py="xl" my="xl" style={{ flex: 1 }}>
-        <Title
-          order={1}
-          ta="center"
-          fz={{ base: "3.5rem", sm: "5rem" }}
-          ff="'Tele Marines', system-ui, sans-serif"
-          c="teal"
-          fs="italic"
-          mb="md"
-        >
-          jumPy whAle
-        </Title>
-        <Text ta="center" size="lg" mb="xl">
-          Hi, I am Arjun, here are some of the stuff I built.
-        </Text>
-        <SimpleGrid cols={{ base: 1, sm: 2 }} spacing="lg" py="xl">
-          {PROJECTS.map((project) => (
-            <Anchor
-              key={project.name}
-              href={project.link}
-              target="_blank"
-              underline="never"
-            >
-              <Card
-                className="projectCard"
-                shadow="sm"
-                padding="lg"
-                radius="md"
-                withBorder
-                h="100%"
-              >
-                {project.logoImg && (
-                  <Card.Section>
-                    <div className="projectCardImage">
-                      <Image src={project.logoImg} alt={project.name} />
-                    </div>
-                  </Card.Section>
-                )}
-                <Title order={3} mt="md" mb="xs" size="h4">
-                  {project.name}
-                </Title>
-                <Text size="sm" c="dimmed">
-                  {project.description}
-                </Text>
-              </Card>
-            </Anchor>
-          ))}
-        </SimpleGrid>
-      </Container>
-      <Text ta="center" size="sm" c="dimmed" py="md">
-        &copy; {new Date().getFullYear()} Jumpy Whale. All rights reserved.
-      </Text>
-    </Box>
+    <Routes>
+      <Route element={<SiteLayout />}>
+        <Route index element={<Home />} />
+        <Route path="projects" element={<Projects />} />
+        <Route path="about" element={<About />} />
+        {/* gh-pages serves 404.html for unknown paths; send those home. */}
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Route>
+    </Routes>
   );
 }
 

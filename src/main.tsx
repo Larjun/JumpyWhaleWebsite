@@ -6,8 +6,11 @@ import {
   type CSSVariablesResolver,
 } from "@mantine/core";
 import "@mantine/core/styles.css";
-import "@fontsource/roboto/400.css";
-import "@fontsource/roboto/700.css";
+import { BrowserRouter } from "react-router-dom";
+import "@fontsource/blinker/400.css";
+import "@fontsource/blinker/600.css";
+import "@fontsource/blinker/700.css";
+import "@fontsource/michroma/400.css";
 import "./index.css";
 import App from "./App.tsx";
 import {
@@ -23,8 +26,12 @@ import {
 const theme = createTheme({
   primaryColor: "teal",
   colors: { teal: TEAL_RAMP },
-  fontFamily: "'Roboto', sans-serif",
-  headings: { fontFamily: "'Roboto', sans-serif" },
+  fontFamily: "'Blinker', system-ui, sans-serif",
+  headings: {
+    fontFamily: "'Michroma', system-ui, sans-serif",
+    // Michroma ships a single weight; asking for bold only triggers faux-bolding.
+    fontWeight: "400",
+  },
   components: {
     Card: {
       styles: {
@@ -58,7 +65,9 @@ createRoot(document.getElementById("root")!).render(
       defaultColorScheme="auto"
       cssVariablesResolver={cssVariablesResolver}
     >
-      <App />
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
     </MantineProvider>
   </StrictMode>,
 );
