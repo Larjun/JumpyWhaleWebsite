@@ -70,7 +70,10 @@ export const HOME_BANNERS: BannerDef[] = [
         href: "https://docs.google.com/document/d/1mgu7oLRhmiBkjJYGCaykEE_BttQIcyAWD0ngxJAhehA/edit?usp=sharing",
         external: true,
       },
-      { label: "See Projects", href: "/projects", variant: "outline" },
+      { 
+        label: "See Projects", 
+        href: "/projects",
+      },
     ],
   },
   {
@@ -114,7 +117,12 @@ export const HOME_BANNERS: BannerDef[] = [
     ),
     dim: true,
     align: "left",
-    actions: [{ label: "My Work", href: "/projects", variant: "outline" }],
+    actions: [
+      { 
+        label: "My Work", 
+        href: "/projects", 
+      }
+    ],
   },
   {
     id: "code",
@@ -134,7 +142,10 @@ export const HOME_BANNERS: BannerDef[] = [
     dim: true,
     align: "right",
     actions: [
-      { label: "All projects", href: "/projects" },
+      { 
+        label: "All projects", 
+        href: "/projects" 
+      },
     ],
   },
   {
