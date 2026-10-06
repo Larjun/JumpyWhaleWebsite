@@ -155,7 +155,7 @@ body {
 }
 
 html {
-  scroll-behavior: smooth;
+  /* No scroll-behavior here — Lenis handles easing, and the two fight. */
   scroll-padding-top: var(--jw-nav-h);
 }
 

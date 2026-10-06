@@ -7,6 +7,7 @@ import {
 } from "@mantine/core";
 import "@mantine/core/styles.css";
 import { BrowserRouter } from "react-router-dom";
+import SmoothScroll from "./layout/SmoothScroll";
 import "@fontsource/blinker/400.css";
 import "@fontsource/blinker/600.css";
 import "@fontsource/blinker/700.css";
@@ -65,9 +66,11 @@ createRoot(document.getElementById("root")!).render(
       defaultColorScheme="auto"
       cssVariablesResolver={cssVariablesResolver}
     >
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
+      <SmoothScroll>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </SmoothScroll>
     </MantineProvider>
   </StrictMode>,
 );
