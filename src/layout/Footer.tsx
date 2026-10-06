@@ -14,7 +14,7 @@ export default function Footer() {
       py="xl"
       style={{
         borderTop: "1px solid var(--card-border)",
-        backgroundColor: "var(--card-bg)",
+        backgroundColor: "black",
       }}
     >
       <Container size="lg">
@@ -48,7 +48,7 @@ export default function Footer() {
             )}
           </Group>
           <Text ta="center" size="sm" c="dimmed">
-            &copy; {new Date().getFullYear()} Jumpy Whale. All rights reserved.
+            &copy; {new Date().getFullYear()} Jumpy Whale. All rights reserved. All liveries and car designs are designed by me.
           </Text>
         </Stack>
       </Container>
