@@ -298,22 +298,6 @@ html {
   opacity: 0.55;
 }
 
-.jw-slash::after {
-  content: "";
-  position: absolute;
-  top: -20%;
-  bottom: -20%;
-  left: -4%;
-  width: 90px;
-  background: linear-gradient(
-    90deg,
-    color-mix(in srgb, var(--jw-accent) 16%, transparent),
-    transparent
-  );
-  transform: rotate(var(--jw-slash));
-}
-
-/* Dark scrim so banner copy stays legible over any livery photo */
 .jw-banner-media {
   position: absolute;
   inset: 0;
