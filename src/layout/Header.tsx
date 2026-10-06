@@ -7,6 +7,7 @@ import {
   Stack,
   Text,
 } from "@mantine/core";
+import { IconExternalLink } from "@tabler/icons-react";
 import { useDisclosure, useWindowScroll } from "@mantine/hooks";
 import { NavLink, Link } from "react-router-dom";
 
@@ -56,6 +57,12 @@ export default function Header() {
                     className="jw-navlink"
                   >
                     {item.label}
+                    <IconExternalLink
+                      className="jw-navlink-ext"
+                      size={13}
+                      stroke={2}
+                      aria-hidden
+                    />
                   </a>
                 ) : (
                   <NavLink
@@ -110,6 +117,12 @@ export default function Header() {
                 className="jw-navlink jw-navlink-mobile"
               >
                 {item.label}
+                <IconExternalLink
+                  className="jw-navlink-ext"
+                  size={18}
+                  stroke={2}
+                  aria-hidden
+                />
               </a>
             ) : (
               <NavLink

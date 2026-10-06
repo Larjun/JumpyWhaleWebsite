@@ -117,6 +117,7 @@ export const PROJECTS: ProjectClassDef[] = [
     role: "Creator",
     description:
       "I built this simple tool with a help of a buddy to clean up liveries in Assetto Corsa Competizione.",
+    link: "https://github.com/Larjun/acc_liveries_clean_up",
     year: "2024",
     status: "Live",
     ...liveryCardImg("mhr_acc_madhatter", 1),

@@ -10,9 +10,6 @@ export default function Projects() {
       pt={{ base: 48, sm: 72 }}
       pb={{ base: 64, sm: 96 }}
     >
-      <Box className="jw-grid-texture" aria-hidden />
-      <Box className="jw-slash" aria-hidden />
-
       <Container size="lg" style={{ position: "relative", zIndex: 2 }}>
         <Reveal>
           <Stack gap="sm" mb={{ base: 40, sm: 56 }} maw={680}>
